@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 public class PersonalAccount {
@@ -17,6 +18,19 @@ public class PersonalAccount {
             balance += amount;
             Amount depositTransaction = new Amount(amount, TransactionType.DEPOSIT);
             transactions.add(depositTransaction);
+        }
+    }
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            Amount withdrawalTransaction = new Amount(amount, TransactionType.WITHDRAWAL);
+            transactions.add(withdrawalTransaction);
+        }
+    }
+    public void printTransactionHistory() {
+        System.out.println("Transaction History for Account: " + accountNumber);
+        for (Amount transaction : transactions) {
+            System.out.println(transaction.getTransactionType() + ": $" + transaction.getAmount());
         }
     }
 }
