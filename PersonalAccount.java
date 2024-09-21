@@ -33,4 +33,13 @@ public class PersonalAccount {
             System.out.println(transaction.getTransactionType() + ": $" + transaction.getAmount());
         }
     }
+    public double getBalance() {
+        return balance;
+    }
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+    public String getAccountHolder() {
+        return accountHolder;
+    }
 }
