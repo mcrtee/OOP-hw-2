@@ -1,7 +1,15 @@
-public class Amount {
+/**
+ * Represents a transaction amount with its type.
+ */
+ class Amount {
     private double amount;
     private TransactionType transactionType;
-
+    /**
+     * Constructs an Amount with the specified amount and transaction type.
+     *
+     * @param amount the amount for the transaction
+     * @param transactionType the type of transaction
+     */
     public Amount(double amount, TransactionType transactionType ) {
         this.amount = amount;
         this.transactionType = transactionType;
@@ -17,6 +25,7 @@ public class Amount {
     }
     public void setTransactionType (TransactionType newTransactionType) {
         transactionType = newTransactionType;
+
     }
 
 }
